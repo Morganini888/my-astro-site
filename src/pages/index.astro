@@ -1,45 +1,74 @@
 ---
+import BaseHead from '../components/Basehead.astro';
+import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+
 import Card from '../components/Card.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 ---
 
-<Layout title="Welcome to Astro.">
+<head>
+	
+	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
+
+<body>
+
+
+
+<Header title={SITE_TITLE} />
+
+
+<Layout title="Goodlander Experience Training(GET)">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			Check out the <code>src/pages</code> directory to get started.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
+	<div class="MainList">
+		
 		<ul role="list" class="link-card-grid">
 			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
+				href="https://getprograms.xyz"
+				title="GET Programs .xyz"
+				body=""
 			/>
 			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
+				href="https://getcommunity.xyz"
+				title="GET Community .xyz"
+				body=""
 			/>
 			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
+				href="https://getcounseling.xyz"
+				title="GET  Counseling .xyz"
+				body=""
 			/>
 			<Card
-				href="https://astro.build/chat/"
-				title="Chat"
-				body="Come say hi to our amazing Discord community. ❤️"
+				href="https://getconsulting.xyz"
+				title="GET Consulting .xyz"
+				body=" "
 			/>
+			
 		</ul>
+	</div>
 	</main>
 </Layout>
+<Footer>slot</Footer>
+</body>
+
 
 <style>
 	:root {
-		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+		--astro-gradient: linear-gradient(0deg, #151516, #d5ccd3);
 	}
 
+	html {
+		font-family: system-ui, sans-serif;
+		font-size: var(--font-size-base);
+		color: var(--color-text);
+		background-image: url("/YXZBackground.jpg");
+		background-color: var(--color-bg);
+		background-position: 45% 5%;
+		
+	}
+	
 	h1 {
 		margin: 2rem 0;
 	}
@@ -50,6 +79,14 @@ import Card from '../components/Card.astro';
 		max-width: 60ch;
 	}
 
+	.MainList{ 
+    color: rgb(247, 245, 243);
+    padding: 0.80em;
+    background-color: fffff;
+    margin: 2px;
+    font-size: 25px;
+    line-height: 0.6em;
+  } 
 	.text-gradient {
 		font-weight: 900;
 		background-image: var(--astro-gradient);
@@ -58,7 +95,7 @@ import Card from '../components/Card.astro';
 		background-size: 100% 200%;
 		background-position-y: 100%;
 		border-radius: 0.4rem;
-		animation: pulse 4s ease-in-out infinite;
+		animation: pulse 18s ease-in-out infinite;
 	}
 
 	@keyframes pulse {
@@ -74,10 +111,10 @@ import Card from '../components/Card.astro';
 	.instructions {
 		line-height: 1.6;
 		margin: 1rem 0;
-		background: #4f39fa;
+		background: rgb(90, 87, 87);
 		padding: 1rem;
 		border-radius: 0.4rem;
-		color: var(--color-bg);
+		color: var(--color-title);
 	}
 
 	.instructions code {
@@ -89,8 +126,8 @@ import Card from '../components/Card.astro';
 
 	.link-card-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
+	    gap: 1rem;
 		padding: 0;
+		
 	}
 </style>
